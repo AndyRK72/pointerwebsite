@@ -1,95 +1,106 @@
-import Navigation from '@/components/Navigation';
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
-      <Navigation />
-      
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Hero Section */}
-      <div className="relative isolate pt-14">
-        <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-          <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-green-400 to-green-600 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-          />
+      <section className="flex flex-col items-center justify-center pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center">
+          {/* Lighthouse Animation */}
+          <div className="relative w-32 h-32 mb-6">
+            <svg 
+              viewBox="0 0 100 100" 
+              className="w-full h-full"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Lighthouse Base */}
+              <path 
+                d="M30,80 L70,80 L65,40 L35,40 Z" 
+                fill="#4B5563" 
+                className="shadow-md"
+              />
+              {/* Lighthouse Tower */}
+              <path 
+                d="M40,40 L60,40 L55,20 L45,20 Z" 
+                fill="#6B7280" 
+                className="shadow-md"
+              />
+              {/* Light Beam */}
+              <path 
+                d="M50,20 L30,0 L70,0 Z" 
+                fill="#FCD34D" 
+                className="opacity-50 animate-sweep"
+                style={{
+                  animation: 'sweep 3s infinite ease-in-out',
+                  transformOrigin: '50% 100%'
+                }}
+              />
+            </svg>
+          </div>
+          
+          {/* Title and Subtitle */}
+          <h1 className="text-5xl font-bold text-gray-800 mb-4">POINTER</h1>
+          <p className="text-xl text-gray-600 mb-8 text-center max-w-2xl">
+            Optimize every purchase. Maximize your rewards.
+          </p>
+          
+          {/* CTA Button */}
+          <Link 
+            href="/optimize" 
+            className="px-8 py-3 bg-green-500 hover:bg-green-600 text-white font-medium rounded-2xl shadow-md transition-all duration-300 ease-in-out"
+          >
+            Start Optimizing
+          </Link>
         </div>
-        
-        <div className="py-24 sm:py-32 lg:pb-40">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Maximize Your Points
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Choose the best credit card for every purchase
-              </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
-                <Link
-                  href="/optimize"
-                  className="rounded-2xl bg-green-500 px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-green-600 transition-all duration-300 ease-in-out"
-                >
-                  Start Optimizing
-                </Link>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-white p-6 rounded-2xl shadow-md">
+              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Smart Card Matching</h3>
+              <p className="text-gray-600">Get the best card for every purchase</p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="bg-white p-6 rounded-2xl shadow-md">
+              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Reward Maximization</h3>
+              <p className="text-gray-600">Maximize cashback, miles, or points</p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-white p-6 rounded-2xl shadow-md">
+              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Future Insights</h3>
+              <p className="text-gray-600">Plan points transfers like a forex trader</p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* 3-Step Process */}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {steps.map((step, index) => (
-              <div key={step.title} className="relative flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-md">
-                <div className="text-4xl mb-4">{step.emoji}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-gray-600 text-center">{step.description}</p>
-                {index < steps.length - 1 && (
-                  <div className="hidden sm:block absolute -right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-                    →
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
-          <div className="text-center">
-            <p className="text-sm text-gray-500">Trusted by thousands of users</p>
-            <div className="mt-4 flex justify-center space-x-8">
-              <div className="flex items-center space-x-2">
-                <span className="text-yellow-400">★★★★★</span>
-                <span className="text-sm text-gray-600">4.9/5 Rating</span>
-              </div>
-              <div className="text-sm text-gray-600">10,000+ Cards Optimized</div>
-              <div className="text-sm text-gray-600">$2M+ Rewards Earned</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+      {/* Footer */}
+      <footer className="py-6 text-center text-gray-500 text-sm">
+        © 2025 Pointer. All rights reserved.
+      </footer>
+    </div>
   );
 }
-
-const steps = [
-  {
-    emoji: "1️⃣",
-    title: "Add your cards",
-    description: "Input your credit cards and their rewards programs"
-  },
-  {
-    emoji: "2️⃣",
-    title: "Get your best card recommendation",
-    description: "Receive instant recommendations for your purchases"
-  },
-  {
-    emoji: "3️⃣",
-    title: "Maximize rewards",
-    description: "Earn more points and rewards with every purchase"
-  }
-];
