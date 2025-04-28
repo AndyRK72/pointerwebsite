@@ -9,7 +9,7 @@
 }
 
 .animate-sweep {
-  animation: sweep 3s infinite ease-in-out;
+  animation: sweep 2s infinite ease-in-out;
 }
 
 :root {
