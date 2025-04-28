@@ -10,6 +10,7 @@
 
 .animate-sweep {
   animation: sweep 2s infinite ease-in-out;
+  transform-origin: center center;
 }
 
 :root {
