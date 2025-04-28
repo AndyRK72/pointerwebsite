@@ -12,26 +12,32 @@ export default function Navigation() {
         <div className="flex justify-between h-16">
           <div className="flex">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-indigo-600">Pointer</span>
+              <span className="text-2xl font-bold text-green-500">Pointer</span>
             </Link>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <Link href="/features" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900">
-                Features
+              <Link href="/dashboard" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900">
+                Dashboard
               </Link>
-              <Link href="/pricing" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
-                Pricing
+              <Link href="/optimize" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
+                Optimize
               </Link>
-              <Link href="/about" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
-                About
+              <Link href="/cards" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
+                My Cards
               </Link>
             </div>
           </div>
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
+          <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
             <Link
-              href="/get-started"
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+              href="/login"
+              className="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-2xl text-gray-700 hover:bg-gray-50 transition-all duration-300"
             >
-              Get Started
+              Login
+            </Link>
+            <Link
+              href="/signup"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-2xl text-white bg-green-500 hover:bg-green-600 transition-all duration-300"
+            >
+              Sign Up
             </Link>
           </div>
           <div className="flex items-center sm:hidden">
@@ -59,28 +65,34 @@ export default function Navigation() {
         <div className="sm:hidden">
           <div className="pt-2 pb-3 space-y-1">
             <Link
-              href="/features"
-              className="block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-indigo-500 text-indigo-700 bg-indigo-50"
+              href="/dashboard"
+              className="block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-green-500 text-green-700 bg-green-50"
             >
-              Features
+              Dashboard
             </Link>
             <Link
-              href="/pricing"
+              href="/optimize"
               className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300"
             >
-              Pricing
+              Optimize
             </Link>
             <Link
-              href="/about"
+              href="/cards"
               className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300"
             >
-              About
+              My Cards
             </Link>
             <Link
-              href="/get-started"
+              href="/login"
               className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300"
             >
-              Get Started
+              Login
+            </Link>
+            <Link
+              href="/signup"
+              className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300"
+            >
+              Sign Up
             </Link>
           </div>
         </div>
