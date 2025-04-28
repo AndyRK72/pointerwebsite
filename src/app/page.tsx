@@ -8,11 +8,11 @@ export default function Home() {
     <div className="bg-white text-gray-900 font-sans">
       
       {/* HERO Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 bg-gradient-to-b from-white to-gray-50">
+      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 bg-gradient-to-b from-white to-gray-50">
         <h1 className="text-6xl md:text-7xl font-extrabold mb-6">
           Pointer
         </h1>
-        <p className="text-2xl text-gray-600 max-w-2xl mb-8">
+        <p className="text-3xl font-light text-gray-600 max-w-2xl mb-8">
           Optimize every purchase. Maximize every reward.
         </p>
         <button className="bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all duration-300 shadow-lg">
@@ -27,7 +27,7 @@ export default function Home() {
             Why Choose Pointer?
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             {/* Feature 1 */}
             <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all">
               <div className="text-green-500 text-5xl mb-4">🎯</div>
