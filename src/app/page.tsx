@@ -20,7 +20,7 @@ export default function Home() {
 
         {/* CTA Button */}
         <Link
-          href="/optimize"
+          href="#features"
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300"
         >
           Start Optimizing
