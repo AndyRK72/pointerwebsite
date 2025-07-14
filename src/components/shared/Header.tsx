@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
 import { createPageUrl } from "../../utils/createPageUrl";
 import { Button } from "../ui/button";
 import { Printer } from "lucide-react";
@@ -12,8 +12,7 @@ const navItems = [
 ];
 
 export default function Header() {
-  const location = useLocation();
-
+  // Next.js does not have useLocation; use pathname if needed from next/navigation
   return (
     <header className="relative z-20 bg-white/80 backdrop-blur-sm border-b border-slate-200">
       <nav className="px-6 py-4">
@@ -23,7 +22,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3"
           >
-            <Link to={createPageUrl("Home")} className="flex items-center gap-3">
+            <Link href={createPageUrl("Home")} className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                 <Printer className="w-6 h-6 text-white" />
               </div>
@@ -39,16 +38,12 @@ export default function Header() {
           >
             {navItems.map(item => {
               const url = createPageUrl(item.page);
-              const isActive = location.pathname === url;
+              // No isActive logic for now
               return (
                 <Link 
                   key={item.name} 
-                  to={url} 
-                  className={`font-medium transition-colors ${
-                    isActive 
-                      ? 'text-blue-600' 
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
+                  href={url} 
+                  className={`font-medium transition-colors text-slate-600 hover:text-slate-900`}
                 >
                   {item.name}
                 </Link>

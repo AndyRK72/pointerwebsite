@@ -1,6 +1,6 @@
 import React from "react";
+import Link from "next/link";
 import { Printer, Twitter, Linkedin, Github, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
 import { createPageUrl } from "../../utils/createPageUrl";
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link to={createPageUrl("Home")} className="flex items-center gap-3 mb-6">
+            <Link href={createPageUrl("Home")} className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
                 <Printer className="w-6 h-6 text-white" />
               </div>
@@ -39,8 +39,8 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-6">Product</h4>
             <ul className="space-y-4">
-              <li><Link to={createPageUrl("Home")} hash="#features" className="text-slate-400 hover:text-white transition-colors">Features</Link></li>
-              <li><Link to={createPageUrl("Home")} hash="#pricing" className="text-slate-400 hover:text-white transition-colors">Pricing</Link></li>
+              <li><Link href={createPageUrl("Home") + "#features"} className="text-slate-400 hover:text-white transition-colors">Features</Link></li>
+              <li><Link href={createPageUrl("Home") + "#pricing"} className="text-slate-400 hover:text-white transition-colors">Pricing</Link></li>
               <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Security</a></li>
               <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Integrations</a></li>
             </ul>
@@ -49,8 +49,8 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-6">Company</h4>
             <ul className="space-y-4">
-              <li><Link to={createPageUrl("About")} className="text-slate-400 hover:text-white transition-colors">About</Link></li>
-              <li><Link to={createPageUrl("Updates")} className="text-slate-400 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href={createPageUrl("About")} className="text-slate-400 hover:text-white transition-colors">About</Link></li>
+              <li><Link href={createPageUrl("Updates")} className="text-slate-400 hover:text-white transition-colors">Blog</Link></li>
               <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Careers</a></li>
               <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Contact</a></li>
             </ul>
