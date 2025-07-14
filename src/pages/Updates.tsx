@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { Update } from '../entities/Update';
 import { motion } from 'framer-motion';
